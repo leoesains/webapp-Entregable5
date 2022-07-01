@@ -4,6 +4,7 @@
     document.getElementById("orderDate").value = fecha.toJSON().slice(0,10);
 
     document.querySelector("#btn_volver_alta_compra").addEventListener("click", volver);
+    document.querySelector("#btn_enviar_alta_compra").addEventListener("click", generarCompraIrADetalle);
     
     function volver(){
         location.href="compra.html";
