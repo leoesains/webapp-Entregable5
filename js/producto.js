@@ -2,74 +2,57 @@
     //const studenList =  document.getElementById("estudiantes");
     //const base = "http://localhost:8080/Entregable2/rest/";
     
-    // A) ALTA DE ESTUDIANTE
-    function registrar(){
-        let lu = document.querySelector("#lu_a").value;
-        let nombres = document.querySelector("#nombres").value;
-        let apellidos = document.querySelector("#apellidos").value;
-        let genero = document.querySelector("#genero_a").value;
-        let edad = document.querySelector("#edad").value;
-        let dni = document.querySelector("#dni").value;
-        let ciudad = document.querySelector("#ciudad").value;
-        let estudiante = {
-            lu: lu,
-            apellidos: apellidos,
-            ciudad: ciudad,
-            dni: dni,
-            edad: edad,
-            genero: genero, 
-            nombres: nombres
-        };
-        fetch(base + "estudiantes", {
-            "method": 'POST',
-            "mode": 'cors',
-            "headers": { "Content-Type": "application/json" },
-            "body": JSON.stringify(estudiante)
-        })
-        alert("Registro de estudiante exitoso!");
-    }
-
-    // B) MATRICULAR UN ESTUDIANTE EN UNA CARRERA
-    function matricular(){
-        let lu = document.querySelector("#lu_b").value;
-        let idCarrera = document.querySelector("#idCarrera").value;
-        console.log(lu);
-        console.log(idCarrera);    
+   
+    // LISTAR PRODUCTOS
+    async function getProductos() {
         
-        fetch(base + "inscripcion" + "/" + lu + "/" + idCarrera, {
-            "method": 'POST',
-            "mode": 'cors',
-            "headers": { "Content-Type": "application/json" }
-        })
-        alert("Inscripción exitosa!");
-    } 
-
-    // C) LISTAR ESTUDIANTES
-    async function getEstudiantes() {
-        
-        const response = await fetch(base + "estudiantes", {
+        const response = await fetch(base + "productos", {
             "method": 'GET',
             "mode": 'no-cors'
         });
         const data = await response.json();
-        let lista_estudiantes = document.querySelector("#estudiantes");
+        let lista_productos = document.querySelector("#productos");
         let lista = "";
-        data.forEach(estudiante => {
+        data.forEach(producto => {
             lista += 
             `<li class="list-group-item">
                 <div class="name">
-                    <h2><b>${estudiante.nombres} ${estudiante.apellidos}</b></h2>
+                    <h2><b>${producto.nombres}</b></h2>
                 </div>
-                <div class="name">
-                    <h3>LU: ${estudiante.lu} Edad: ${estudiante.edad} DNI: ${estudiante.dni} Género: ${estudiante.genero}</h3>
-                </div>
+               
             </li>`;
-        lista_estudiantes.innerHTML = lista;
+        lista_productos.innerHTML = lista;
         });
     }
+
+    function volver(){
+        location.href="index.html";
+    }
+
+    function altaProducto(){
+        location.href="form_alta_producto.html";
+    }
+
+    function bajaProducto(){
+        location.href="form_baja_producto.html";
+    }
+
+    function editarProducto(){
+        location.href="form_editar_producto.html";
+    }
+    
+    document.querySelector("#btn_volver_producto").addEventListener("click", volver);
+    document.querySelector("#btn_alta_producto").addEventListener("click", altaProducto);
+    document.querySelector("#btn_baja_producto").addEventListener("click", bajaProducto);
+    document.querySelector("#btn_editar_producto").addEventListener("click", editarProducto);
+    //document.querySelector("#btn_buscar_g").addEventListener("click", getEstudiantesCarreraCiudad);
+    //document.querySelector("#btn_reporte").addEventListener("click", getCarrerasInscriptosYEgresados);
+
+    //________________________________________________________________________________________________
+    
     
     // D) DEVUELVE ESTUDIANTE POR LU
-    const getEstudiante = () => {
+     const getEstudiante = () => {
         const lu = document.querySelector("#lu_d").value;
         const url = `${base}estudiantes/${lu}`;
         let estudiante = "";
@@ -183,20 +166,5 @@
             }))
             .catch(error => alert(error.message)
         );
-    }
-
-    
-    
-    document.querySelector("#btn_volver_producto").addEventListener("click", volver);
-    document.querySelector("#btn_alta_producto").addEventListener("click", altaProducto);
-    //document.querySelector("#btn_buscar_g").addEventListener("click", getEstudiantesCarreraCiudad);
-    //document.querySelector("#btn_reporte").addEventListener("click", getCarrerasInscriptosYEgresados);
-
-    function volver(){
-        location.href="index.html";
-    }
-
-    function altaProducto(){
-        location.href="form_alta_producto.html";
     }
     
