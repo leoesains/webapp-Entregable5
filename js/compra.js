@@ -187,10 +187,18 @@
 
     
     document.querySelector("#btn_volver_compra").addEventListener("click", volver);
-    document.querySelector("#btn_carreras").addEventListener("click", getCarrerasConInscriptos);
-    document.querySelector("#btn_buscar_g").addEventListener("click", getEstudiantesCarreraCiudad);
-    document.querySelector("#btn_reporte").addEventListener("click", getCarrerasInscriptosYEgresados);
+    document.querySelector("#btn_alta_compra").addEventListener("click", altaCompra);
+    document.querySelector("#btn_baja_compra").addEventListener("click", bajaCompra);
+    
 
     function volver(){
         location.href="index.html";
+    }
+
+    function altaCompra(){
+        location.href="form_alta_compra.html";
+    }
+
+    function bajaCompra111(){
+        location.href="form_baja_compra.html";
     }

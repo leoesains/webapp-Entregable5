@@ -198,3 +198,7 @@
     function altaCliente(){
         location.href="form_alta_cliente.html";
     }
+
+    function bajaCliente(){
+        location.href="form_baja_cliente.html";
+    }

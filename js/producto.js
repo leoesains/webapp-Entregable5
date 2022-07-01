@@ -189,8 +189,7 @@
     
     document.querySelector("#btn_volver_producto").addEventListener("click", volver);
     document.querySelector("#btn_alta_producto").addEventListener("click", altaProducto);
-    //document.querySelector("#btn_buscar_g").addEventListener("click", getEstudiantesCarreraCiudad);
-    //document.querySelector("#btn_reporte").addEventListener("click", getCarrerasInscriptosYEgresados);
+    document.querySelector("#btn_baja_producto").addEventListener("click", bajaProducto);
 
     function volver(){
         location.href="index.html";
@@ -198,5 +197,9 @@
 
     function altaProducto(){
         location.href="form_alta_producto.html";
+    }
+
+    function bajaProducto(){
+        location.href="form_baja_producto.html";
     }
     
