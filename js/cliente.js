@@ -2,6 +2,53 @@
     //const studenList =  document.getElementById("estudiantes");
     //const base = "http://localhost:8080/Entregable2/rest/";
     
+    
+
+    //LISTAR CLIENTES
+    async function getClientes() {
+        
+        const response = await fetch(base + "clientes", {
+            "method": 'GET',
+            "mode": 'no-cors'
+        });
+        const data = await response.json();
+        let lista_clientes = document.querySelector("#clientes");
+        let lista = "";
+        data.forEach(cliente => {
+            lista += 
+            `<li class="list-group-item">
+                <div class="name">
+                    <h2><b>${cliente.nombres} ${cliente.apellidos}</b></h2>
+                </div>
+            </li>`;
+        lista_clientes.innerHTML = lista;
+        });
+    }
+
+    function volver(){
+        location.href="index.html";
+    }
+
+    function altaCliente(){
+        location.href="form_alta_cliente.html";
+    }
+   
+    function bajaCliente(){
+        location.href="form_baja_cliente.html";
+    }
+
+    function editarCliente(){
+        location.href="form_editar_cliente.html";
+    }
+
+    document.querySelector("#btn_volver").addEventListener("click", volver);
+    document.querySelector("#btn_alta_cliente").addEventListener("click", altaCliente);
+    document.querySelector("#btn_baja_cliente").addEventListener("click", bajaCliente);
+    document.querySelector("#btn_editar_cliente").addEventListener("click", editarCliente);
+
+    
+
+    /*
     // A) ALTA DE ESTUDIANTE
     function registrar(){
         let lu = document.querySelector("#lu_a").value;
@@ -29,6 +76,7 @@
         alert("Registro de estudiante exitoso!");
     }
 
+
     // B) MATRICULAR UN ESTUDIANTE EN UNA CARRERA
     function matricular(){
         let lu = document.querySelector("#lu_b").value;
@@ -43,7 +91,8 @@
         })
         alert("Inscripción exitosa!");
     } 
-
+*/
+/*
     // C) LISTAR ESTUDIANTES
     async function getEstudiantes() {
         
@@ -68,6 +117,7 @@
         });
     }
     
+
     // D) DEVUELVE ESTUDIANTE POR LU
     const getEstudiante = () => {
         const lu = document.querySelector("#lu_d").value;
@@ -185,20 +235,4 @@
         );
     }
 
-    
-    document.querySelector("#btn_volver_cliente").addEventListener("click", volver);
-    document.querySelector("#btn_alta_cliente").addEventListener("click", altaCliente);
-    document.querySelector("#btn_baja_cliente").addEventListener("click", bajaCliente);
-    document.querySelector("#btn_actualizar_cliente").addEventListener("click", actualizarCliente);
-
-    function volver(){
-        location.href="index.html";
-    }
-
-    function altaCliente(){
-        location.href="form_alta_cliente.html";
-    }
-
-    function bajaCliente(){
-        location.href="form_baja_cliente.html";
-    }
+    */
