@@ -189,6 +189,7 @@
     document.querySelector("#btn_volver_compra").addEventListener("click", volver);
     document.querySelector("#btn_alta_compra").addEventListener("click", altaCompra);
     document.querySelector("#btn_baja_compra").addEventListener("click", bajaCompra);
+    document.querySelector("#btn_actualizar_compra").addEventListener("click", actualizarCompra);
     
 
     function volver(){
@@ -199,6 +200,12 @@
         location.href="form_alta_compra.html";
     }
 
-    function bajaCompra111(){
+    function bajaCompra(){
         location.href="form_baja_compra.html";
     }
+
+    function actualizarCompra(){
+        location.href="form_actualizar_compra.html";
+    }
+
+    

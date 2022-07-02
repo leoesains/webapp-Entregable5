@@ -9,50 +9,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
+
     <header>
         <div>Grupo 1 (Rauch) - Entregable 5 / Judit Meaca - Dolores Peña - Leonardo Esains - Mauricio Oruezabal - Sebastian Esains</div>
     </header>
-
     
     <div class="container">
 
         <div class="container_title">
-            <h1 class="display-1">Alta compra</h1>
+            <h1 class="display-1">Baja compra</h1>
         </div>
 
         <hr class="hr1">
 
-        <form  class="container_form">
-
+        <form action="" class="container_form">
             <div class="width-input">
-                <select id="select_cliente" class="form-control form-label form-select" name="select">
-                    <option selected>Seleccione un cliente</option>
-                <select>
+                <select id="select_compra" class="form-control form-label form-select" name="select">
+                    <option selected>Seleccione una orden de compra</option>
+                </select>
             </div>
-            
-            
-
+        
+            <div class="container_form">
+                <button class="send_button" id="btn_enviar_baja_compra">Eliminar</button>
+                <!--<button class="send_button" id="btn_ver_detalle_orden">Ver detalle</button>-->
+            </div>
         </form>
 
-        
-
-        <div class="container_form">
-            <button class="send_button" id="btn_enviar_alta_compra">Seguir</button>
-            <!--<button class="send_button" id="btn_ver_detalle_orden">Ver detalle</button>-->
-        </div>
-        
         <hr class="hr1">
 
         <div class="container_form">
-            <button class="btn btn-dark" id="btn_volver_alta_compra">Volver</button>
+            <button class="btn btn-dark" id="btn_volver_baja_compra">Volver</button>
         </div>
 
+
     </div>
-
-    
-    
-
-    <script src="js/form_alta_compra.js"></script>
-</body>
+    <script src="js/form_baja_compra.js"></script>
 </body>
 </html>
