@@ -23,9 +23,100 @@
             </li>`;
         lista_clientes.innerHTML = lista;
         });
-
     }
 
+    function volver(){
+        location.href="index.html";
+    }
+
+    function altaCliente(){
+        location.href="form_alta_cliente.html";
+    }
+   
+    function bajaCliente(){
+        location.href="form_baja_cliente.html";
+    }
+
+    function editarCliente(){
+        location.href="form_editar_cliente.html";
+    }
+
+    document.querySelector("#btn_volver").addEventListener("click", volver);
+    document.querySelector("#btn_alta_cliente").addEventListener("click", altaCliente);
+    document.querySelector("#btn_baja_cliente").addEventListener("click", bajaCliente);
+    document.querySelector("#btn_editar_cliente").addEventListener("click", editarCliente);
+
+    
+
+    /*
+    // A) ALTA DE ESTUDIANTE
+    function registrar(){
+        let lu = document.querySelector("#lu_a").value;
+        let nombres = document.querySelector("#nombres").value;
+        let apellidos = document.querySelector("#apellidos").value;
+        let genero = document.querySelector("#genero_a").value;
+        let edad = document.querySelector("#edad").value;
+        let dni = document.querySelector("#dni").value;
+        let ciudad = document.querySelector("#ciudad").value;
+        let estudiante = {
+            lu: lu,
+            apellidos: apellidos,
+            ciudad: ciudad,
+            dni: dni,
+            edad: edad,
+            genero: genero, 
+            nombres: nombres
+        };
+        fetch(base + "estudiantes", {
+            "method": 'POST',
+            "mode": 'cors',
+            "headers": { "Content-Type": "application/json" },
+            "body": JSON.stringify(estudiante)
+        })
+        alert("Registro de estudiante exitoso!");
+    }
+
+
+    // B) MATRICULAR UN ESTUDIANTE EN UNA CARRERA
+    function matricular(){
+        let lu = document.querySelector("#lu_b").value;
+        let idCarrera = document.querySelector("#idCarrera").value;
+        console.log(lu);
+        console.log(idCarrera);    
+        
+        fetch(base + "inscripcion" + "/" + lu + "/" + idCarrera, {
+            "method": 'POST',
+            "mode": 'cors',
+            "headers": { "Content-Type": "application/json" }
+        })
+        alert("Inscripción exitosa!");
+    } 
+*/
+/*
+    // C) LISTAR ESTUDIANTES
+    async function getEstudiantes() {
+        
+        const response = await fetch(base + "estudiantes", {
+            "method": 'GET',
+            "mode": 'no-cors'
+        });
+        const data = await response.json();
+        let lista_estudiantes = document.querySelector("#estudiantes");
+        let lista = "";
+        data.forEach(estudiante => {
+            lista += 
+            `<li class="list-group-item">
+                <div class="name">
+                    <h2><b>${estudiante.nombres} ${estudiante.apellidos}</b></h2>
+                </div>
+                <div class="name">
+                    <h3>LU: ${estudiante.lu} Edad: ${estudiante.edad} DNI: ${estudiante.dni} Género: ${estudiante.genero}</h3>
+                </div>
+            </li>`;
+        lista_estudiantes.innerHTML = lista;
+        });
+    }
+    
 
     // D) DEVUELVE ESTUDIANTE POR LU
     const getEstudiante = () => {
@@ -144,117 +235,4 @@
         );
     }
 
-   
-
-    // ALTA DE CLIENTE
-    function registrar(){
-        
-        let email = document.querySelector("#clientEmail").value;
-        let name = document.querySelector("#name").value;
-        let surname = document.querySelector("#surname").value;
-        let cliente = {
-            email: email,
-            nombre: name,
-            apellido: surname
-        };
-        fetch(base + "clientes", {
-            "method": 'POST',
-            "mode": 'cors',
-            "headers": { "Content-Type": "application/json" },
-            "body": JSON.stringify(cliente)
-        })
-        alert("Se registró correctamente el cliente!");
-    }
-    
-    function volver(){
-        location.href="index.html";
-    }
-
-    function altaCliente(){
-        location.href="form_alta_cliente.html";
-    }
-   
-    function bajaCliente(){
-        location.href="form_baja_cliente.html";
-    }
-
-    function editarCliente(){
-        location.href="form_editar_cliente.html";
-    }
-
-    document.querySelector("#btn_volver").addEventListener("click", volver);
-    document.querySelector("#btn_alta_cliente").addEventListener("click", altaCliente);
-    document.querySelector("#btn_baja_cliente").addEventListener("click", bajaCliente);
-    document.querySelector("#btn_editar_cliente").addEventListener("click", editarCliente);
-
-    
-
-    /*
-    // A) ALTA DE ESTUDIANTE
-    function registrar(){
-        let lu = document.querySelector("#lu_a").value;
-        let nombres = document.querySelector("#nombres").value;
-        let apellidos = document.querySelector("#apellidos").value;
-        let genero = document.querySelector("#genero_a").value;
-        let edad = document.querySelector("#edad").value;
-        let dni = document.querySelector("#dni").value;
-        let ciudad = document.querySelector("#ciudad").value;
-        let estudiante = {
-            lu: lu,
-            apellidos: apellidos,
-            ciudad: ciudad,
-            dni: dni,
-            edad: edad,
-            genero: genero, 
-            nombres: nombres
-        };
-        fetch(base + "estudiantes", {
-            "method": 'POST',
-            "mode": 'cors',
-            "headers": { "Content-Type": "application/json" },
-            "body": JSON.stringify(estudiante)
-        })
-        alert("Registro de estudiante exitoso!");
-    }
-
-
-    // B) MATRICULAR UN ESTUDIANTE EN UNA CARRERA
-    function matricular(){
-        let lu = document.querySelector("#lu_b").value;
-        let idCarrera = document.querySelector("#idCarrera").value;
-        console.log(lu);
-        console.log(idCarrera);    
-        
-        fetch(base + "inscripcion" + "/" + lu + "/" + idCarrera, {
-            "method": 'POST',
-            "mode": 'cors',
-            "headers": { "Content-Type": "application/json" }
-        })
-        alert("Inscripción exitosa!");
-    } 
-*/
-/*
-    // C) LISTAR ESTUDIANTES
-    async function getEstudiantes() {
-        
-        const response = await fetch(base + "estudiantes", {
-            "method": 'GET',
-            "mode": 'no-cors'
-        });
-        const data = await response.json();
-        let lista_estudiantes = document.querySelector("#estudiantes");
-        let lista = "";
-        data.forEach(estudiante => {
-            lista += 
-            `<li class="list-group-item">
-                <div class="name">
-                    <h2><b>${estudiante.nombres} ${estudiante.apellidos}</b></h2>
-                </div>
-                <div class="name">
-                    <h3>LU: ${estudiante.lu} Edad: ${estudiante.edad} DNI: ${estudiante.dni} Género: ${estudiante.genero}</h3>
-                </div>
-            </li>`;
-        lista_estudiantes.innerHTML = lista;
-        });
-    }
     */

@@ -24,30 +24,34 @@
 
         <form action="" class="container_form">
             <div class="width-input">
-                <input type="number" class="form-control form-label" name="numOrder" placeholder="Nro de Orden" value="123456">
-                <select class="form-control form-label form-select" name="select">
+                <input type="number" value="123456" id="id_compra" class="form-control form-label" name="numOrder" placeholder="Nro de Orden">
+                <select id="select_producto" class="form-control form-label form-select" name="select">
                     <option selected>Seleccione un producto</option>
-                    <option value="value1">Producto 1</option>
-                    <option value="value2">Producto 2</option>
-                    <option value="value3">Producto 3</option>
-                  </select><input type="number" class="form-control form-label" name="cantProduct" placeholder="Cantidad">
+                </select>
+                <input type="number" id="cantidad" class="form-control form-label" name="cantProduct" placeholder="Cantidad">
             </div>
-            <div class="container_form">
-                <button class="send_button" id="btn_add_product">Agregar producto</button>
-                <button class="send_button" id="btn_add_product">Finalizar compra</button>
-            </div>
-
+            
         </form>
+
+        <div class="container_form">
+            <button class="send_button" id="btn_add_producto">Agregar producto</button>
+        </div>
 
         <hr class="hr1">
 
         <div class="container_form">
-            <button class="btn btn-dark" id="btn_volver">Volver</button>
+            <button class="send_button" id="btn_fin_compra">Finalizar compra</button>
+        </div>
+
+        <hr class="hr1">
+
+        <div class="container_form">
+            <button class="btn btn-dark" id="btn_volver_detalle_compra">Volver</button>
         </div>
 
     </div>
 
-    <script src="js/entregable5.js"></script>
+    <script src="js/form_alta_detalle_compra.js"></script>
 </body>
 </body>
 </html>
